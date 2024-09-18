@@ -7,10 +7,10 @@ function showAll(){
     favBtn.innerHTML =  '<button onclick="show()" class="bg-pink-500 px-8 py-2 text-white">Favorites</button>'
     data.map(item => {
         cards.innerHTML += `
-            <div id="${item.id}" class="relative min-w-[200px] w-1/5 bg-white mt-11 m-4">
+            <div id="${item.id}" class=" min-w-[200px] w-1/5 bg-white mt-11 m-4">
                 <img src="${item.img}" alt="${item.name}-img" />
-                <i onclick="sech(this, '${item.id}')" class="absolute top-2 right-4 fa-solid fa-heart opacity-70 text-xl hover:text-red-700 hover:opacity-100 hover:scale-150"></i>
-                <div class="py-4 px-2">
+                <div class="relative py-4 px-2">
+                    <i onclick="sech(this, '${item.id}')" class="absolute top-2 right-4 fa-solid fa-heart opacity-70 text-xl hover:text-red-700 hover:opacity-100 hover:scale-150"></i>
                     <h2 class="text-lg font-semibold">${item.name}</h2>
                     <p class="text-[.8rem] pt-4">Qiymet: <span>${item.price}</span></p>
                 </div>
@@ -36,10 +36,10 @@ function show() {
     data.map(item => {
         if (favorites.has(item.id)) {
             cards.innerHTML += `
-                <div id="${item.id}" class="relative min-w-[200px] w-1/5 bg-white mt-11 m-4">
+                <div id="${item.id}" class=" min-w-[200px] w-1/5 bg-white mt-11 m-4">
                     <img src="${item.img}" alt="${item.name}-img" />
-                    <i onclick='sil("${item.id}")' class="absolute top-2 right-4 fa-solid fa-heart text-red-700 hover:opacity-60 text-xl"></i>
-                    <div class="py-4 px-2">
+                    <div class="py-4 px-2 relative">
+                        <i onclick='sil("${item.id}")' class="absolute top-2 right-4 fa-solid fa-heart text-red-700 hover:opacity-60 text-xl"></i>
                         <h2 class="text-lg font-semibold">${item.name}</h2>
                         <p class="text-[.8rem] pt-4">Qiymet: <span>${item.price}</span></p>
                     </div>
